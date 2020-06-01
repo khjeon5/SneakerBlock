@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -8,15 +7,52 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import('@/views/Home.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '/signup',
+    name: 'SignUp',
+    component: () => import('@/views/SignUp.vue'),
+  },
+  {
+    path: '/signin',
+    name: 'SignIn',
+    component: () => import('@/views/SignIn.vue'),
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import('@/views/Cart.vue'),
+  },
+  {
+    path: '/delivery',
+    name: 'Delivery',
+    component: () => import('@/views/Delivery.vue'),
+  },
+  {
+    path: '/itembuy',
+    name: 'ItemBuy',
+    component: () => import('@/views/ItemBuy.vue'),
+  },
+  {
+    path: '/product',
+    name: 'Product',
+    component: () => import('@/views/Product.vue'),
+  },
+  {
+    path: '/userpage',
+    name: 'UserPage',
+    component: () => import('@/views/UserPage.vue'),
+  },
+  {
+    path: '/userwallet',
+    name: 'UserWallet',
+    component: () => import('@/views/UserWallet.vue'),
+  },
+  {
+    path: '/adminpage',
+    name: 'AdminPage',
+    component: () => import('@/views/AdminPage.vue'),
   },
 ]
 
