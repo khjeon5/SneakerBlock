@@ -28,21 +28,4 @@ git clone https://github.com/khjeon5/KSA_Blockchain_Project_Group4.git
 
 ![klaytn](./img/klaytn.jpg)
 
-
-
-1. 개발배경
-
-2. 개발환경
-
-   Klaytn 
-
-   Docker
-
-   Vue
-
-   node.js
-
-   W
-
-##  
-
+커밋해보겠습니다.
