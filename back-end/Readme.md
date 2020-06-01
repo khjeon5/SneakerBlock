@@ -1,3 +1,3 @@
-# Sneaker-Block-Back-End
+# SneakerBlock-Back-End
 
 스니커블록 백엔드
