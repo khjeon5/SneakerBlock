@@ -1,7 +1,7 @@
 # Blockchain Project
 
 ```sh
-git clone https://github.com/khjeon5/KSA_Blockchain_Project_Group4.git
+git clone https://github.com/khjeon5/SneakerBlock.git
 ```
 
 ### 목차
