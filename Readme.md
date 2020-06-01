@@ -29,3 +29,21 @@ git clone https://github.com/khjeon5/KSA_Blockchain_Project_Group4.git
 ![klaytn](./img/klaytn.jpg)
 
 커밋해보겠습니다.
+
+## 사용버전
+Node : 10.X 버전
+linux: ubuntu 18.04
+yarn 1.22.x
+MongoDB: 몽고디비 클라우드
+Vue cli: 4.2.x
+Vuetify: 2.2.x
+Caver.js: 1.4.1
+Apollo-Server: 2.13.x
+nodemon:2.0.4
+Vue-Apollo-client:
+Docker:19.03
+Truffle: 5.1.27
+python: 2.7.X
+Solidity: 0.5.6
+SCN: kscn-v1.4.2-0-linux-amd64.tar.gz
+EN: kend-v1.4.2-0.el7.x86_64.rpm
