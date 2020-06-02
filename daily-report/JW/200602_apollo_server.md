@@ -21,23 +21,23 @@
 
 > babel 오타 조심!!
 
-        ```sh
+        
         {
                 "presets": ["env","stage-3"]}
-        ```
+        
 > package.json 수정
 
-        ```sh
+        
         "scripts": {
                 "start": "nodemon --exec babel-node index.js"
         }
-        ```
+        
 
 >package.json 까시 수정 완료 후, 모듈 install
 
-        ```sh
+        
         npm install
-        ```
+        
 
 3. index.js 설정
 
@@ -47,14 +47,14 @@
 
 > MongoDB 연결 시, 연결이 되지 않으면 connect 버전을 2.2.12로 바꿔야 한다.
 
-        ```sh
+        
         import mongoose from 'mongoose'
         const dbName = "test"
         const dbPassword = "testpassword"
         const uri = `mongodb://playground4:${dbPassword}@cluster0-shard-00-00-2xvk8.gcp.mongodb.net:27017,cluster0-shard-00-01-2xvk8.gcp.mongodb.net:27017,cluster0-shard-00-02-2xvk8.gcp.mongodb.net:27017/${dbName}?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority`
         mongoose.Promise = global.Promise;
         mongoose.connect(uri, { useNewUrlParser: true });
-        ```
+        
 
 5. nodemon을 이용한 graphql 열결 확인
 
