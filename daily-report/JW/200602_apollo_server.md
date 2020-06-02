@@ -7,7 +7,7 @@
 
 1. apollo-server 기본 필요 모듈 설치
 
-        ```sh
+        
         sudo apt-get update
         curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
         sudo apt-get install nodejs
@@ -15,7 +15,7 @@
         mkdir apollo-server
         yarn init
         yarn add apollo-server graphql express express-graphql graphql-tools mogoose babel-cli babel-preset-env babel-preset-stage-3 nodemon
-        ```
+        
 
 2. ./babelrc 및 package.json 수정
 
