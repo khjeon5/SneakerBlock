@@ -94,10 +94,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="#004D40" dark>
-      <v-toolbar-title>Sneaker Block Prototype</v-toolbar-title>
+    <v-app-bar app color="#004D40" dark flat>
+      <v-toolbar-title>Sneaker Block</v-toolbar-title>
+      <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
+
     <v-content>
       <router-view />
     </v-content>
