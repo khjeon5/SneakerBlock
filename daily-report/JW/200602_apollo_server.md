@@ -1,9 +1,9 @@
-#Daily Report
+# Daily Report
 
 > 오늘 괜찮았나 모르겠다.
 > 확실한건 일찍 퇴근하는건 아주 환상적이다.
 
-##apollo-server 구축
+## Apollo-server 
 
 1. apollo-server 기본 필요 모듈 설치
 
@@ -62,7 +62,7 @@
 > graphql-server가 동작이 되지 않을 시, url이 뜨지 않는다.
 >  Mongodb 연결이 되지 않을 시, MongoDB 오류가 뜬다.
 
-6. 오늘의 총평
+## 오늘의 총평
 
 > github에 push 할 때, password를 한번 더 확인하다.
 > Mongodb에 연결을 할 때, 버전을 확인하자.
