@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 import resolvers from './graphql/resolver'
 import fs from 'fs'
 
-const dbName = "sneaker_tech" //DB name
-const dbpassword = "qwer1234"
+const dbName = "" //DB name
+const dbpassword = ""
 const uri = `mongodb://playground4:${dbpassword}@cluster0-shard-00-00-2xvk8.gcp.mongodb.net:27017,cluster0-shard-00-01-2xvk8.gcp.mongodb.net:27017,cluster0-shard-00-02-2xvk8.gcp.mongodb.net:27017/${dbName}?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority`
 mongoose.Promise = global.Promise
 mongoose.connect(uri, { useNewUrlParser: true })// { useNewUrlParser: true }
