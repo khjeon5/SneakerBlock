@@ -1,17 +1,15 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="12">
-        <v-row justify="center">
-          <h2>Sign In</h2>
-        </v-row>
-      </v-col>
-    </v-row>
+    <SignInForm></SignInForm>
   </v-container>
 </template>
 <script>
+import SignInForm from '@/components/SignForm/SignInForm.vue'
 export default {
   name: 'SignIn',
+  components: {
+    SignInForm,
+  },
   data() {
     return {
       //
