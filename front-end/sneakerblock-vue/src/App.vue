@@ -99,8 +99,14 @@
       <v-spacer></v-spacer>
       <v-btn color="success" @click="screen = !screen">screen</v-btn>
       <div v-if="screen">
+        <span @click="$router.push({ name: 'AdminPage' })" style="cursor:pointer" class="mx-2">AdminPage</span>
         <span @click="$router.push({ name: 'Home' })" style="cursor:pointer" class="mx-2">Home</span>
+        <span @click="$router.push({ name: 'Product' })" style="cursor:pointer" class="mx-2">Search</span>
         <span @click="$router.push({ name: 'Product' })" style="cursor:pointer" class="mx-2">Sneakers</span>
+        <span @click="$router.push({ name: 'SignUp' })" style="cursor:pointer" class="mx-2">Enroll</span>
+        <span @click="$router.push({ name: 'UserPage' })" style="cursor:pointer" class="mx-2">My Page</span>
+        <span @click="$router.push({ name: 'Cart' })" style="cursor:pointer" class="mx-2">Cart</span>
+        <span @click="$router.push({ name: 'UserWallet' })" style="cursor:pointer" class="mx-2">Wallet</span>
         <span @click="$router.push({ name: 'SignUp' })" style="cursor:pointer" class="mx-2">Sign Up</span>
         <span @click="$router.push({ name: 'SignIn' })" style="cursor:pointer" class="mx-2">Sign In</span>
       </div>

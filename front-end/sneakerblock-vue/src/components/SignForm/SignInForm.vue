@@ -1,8 +1,18 @@
 <template>
   <v-row>
+    <v-col cols="12">
+      <v-card max-width="400" class="mx-auto" flat>
+        <v-alert type="info">
+          아이디와 비밀번호를 입력 해주세요.
+        </v-alert>
+        <!-- <v-alert type="warning">
+          이메일 혹은 비밀번호가 틀립니다.
+        </v-alert> -->
+      </v-card>
+    </v-col>
     <v-col>
       <v-row justify="center">
-        <h2>회원가입</h2>
+        <h2>로그인</h2>
       </v-row>
     </v-col>
     <v-col cols="12">
@@ -20,8 +30,7 @@
             required
             @click:append="show = !show"
           ></v-text-field>
-          <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
-          <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required></v-checkbox>
+          <br />
           <v-btn :disabled="!valid" color="primary" class="">
             next
           </v-btn>
@@ -70,6 +79,4 @@ export default {
 }
 </script>
 
-<style>
-/*  */
-</style>
+<style></style>
