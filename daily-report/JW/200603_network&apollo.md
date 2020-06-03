@@ -1,6 +1,6 @@
 # 1. Network
 
-1. Service chain in cloud
+## 1. Service chain in cloud
         - 로컬에서 서비스 체인 구축 완료 후 GCP에 올려 서비스 체인 구축
         - 최소 사양이 되지 않은 서비스 체인은 블록 생성 시, 속도 저하 문제 발생
         - 최소 사양을 갖춘 서비스 체인에선 1초에 1block 생성 확인.
@@ -47,10 +47,10 @@
 
 # 2. apollo-server with MongoDB
 
-1. MongoDB Connect
+## 1. MongoDB Connect
         - MongoDB와 연결하기 위해선 2.2.12.X 버전을 사용하여 연결해야 함.
 
-2. graphql made DB collection
+## 2. graphql made DB collection
         - MongoDB에서 product collection에 DB를 생성하려 했지만, default로 porducts로 생성이 된다.
 
 # 3. 총평
