@@ -1,23 +1,15 @@
 # 1. Network
 
 ## 1. Service chain in cloud
-        - 로컬에서 서비스 체인 구축 완료 후 GCP에 올려 서비스 체인 구축
+- 로컬에서 서비스 체인 구축 완료 후 GCP에 올려 서비스 체인 구축        
+- 최소 사양이 되지 않은 서비스 체인은 블록 생성 시, 속도 저하 문제 발생        
+- 최소 사양을 갖춘 서비스 체인에선 1초에 1block 생성 확인.        
+- 다른 인스턴스에서 구성 시, 외부 IP가 변경 된 다는 문제점으로 인하여 같은 인스턴스 의 서버 4대 구동        
+**서비스체인 기본 사양: 4core, RAM: 16GB, SSD: 50GB**        
+- 같은 인스턴스 내에 통신 시, 방화벽을 내림.(ufw disable)        
+**GCP 내 자체 정책이 있으므로 외부 공격 방지 가능**        
+- GCP을 사용할 경우 lrzsz등 로컬 파일 업로드 기능이 차단되어 있으므로 gcloud 기능을 사용하는 것을 추천        
         
-        - 최소 사양이 되지 않은 서비스 체인은 블록 생성 시, 속도 저하 문제 발생
-        
-        - 최소 사양을 갖춘 서비스 체인에선 1초에 1block 생성 확인.
-        
-        - 다른 인스턴스에서 구성 시, 외부 IP가 변경 된 다는 문제점으로 인하여 같은 인스턴스 의 서버 4대 구동
-        
-        **서비스체인 기본 사양: 4core, RAM: 16GB, SSD: 50GB**
-        
-        - 같은 인스턴스 내에 통신 시, 방화벽을 내림.(ufw disable)
-        
-        **GCP 내 자체 정책이 있으므로 외부 공격 방지 가능**
-        
-        - GCP을 사용할 경우 lrzsz등 로컬 파일 업로드 기능이 차단되어 있으므로 gcloud 기능을 사용하는 것을 추천
-        
-        ```sh
         ##service_chain_install##
 
         ##main_service_node##
@@ -51,17 +43,15 @@
         > klay.blockNumber
         43
         ##blockNumber가 0이 아니면 정상 작동##
-        ```
+        
 
 # 2. apollo-server with MongoDB
 
 ## 1. MongoDB Connect
-
-        - MongoDB와 연결하기 위해선 2.2.12.X 버전을 사용하여 연결해야 함.
+- MongoDB와 연결하기 위해선 2.2.12.X 버전을 사용하여 연결해야 함.
 
 ## 2. graphql made DB collection
-
-        - MongoDB에서 product collection에 DB를 생성하려 했지만, default로 porducts로 생성이 된다.
+- MongoDB에서 product collection에 DB를 생성하려 했지만, default로 porducts로 생성이 된다.
 
 # 3. 총평
 
