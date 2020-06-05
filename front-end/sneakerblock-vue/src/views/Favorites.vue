@@ -1,13 +1,15 @@
 <template>
   <v-container>
-    <productAllList />
+    <FavoriteList></FavoriteList>
+    <productAllList></productAllList>
   </v-container>
 </template>
 <script>
+import FavoriteList from '@/components/product/FavoriteList.vue'
 import productAllList from '@/components/product/productAllList.vue'
 export default {
-  name: 'Product',
   components: {
+    FavoriteList,
     productAllList,
   },
   data() {

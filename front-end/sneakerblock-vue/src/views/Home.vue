@@ -1,7 +1,9 @@
 <template>
   <div>
     <HelloWorld />
-    <productAllList />
+    <v-container>
+      <productAllList />
+    </v-container>
   </div>
 </template>
 

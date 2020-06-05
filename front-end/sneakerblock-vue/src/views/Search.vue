@@ -1,13 +1,15 @@
 <template>
   <v-container>
-    <productAllList />
+    <SearchItem></SearchItem>
+    <productAllList></productAllList>
   </v-container>
 </template>
 <script>
+import SearchItem from '@/components/Search/SearchItem.vue'
 import productAllList from '@/components/product/productAllList.vue'
 export default {
-  name: 'Product',
   components: {
+    SearchItem,
     productAllList,
   },
   data() {
