@@ -1,17 +1,23 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="12">
-        <v-row justify="center">
-          <h2>AdminPage</h2>
-        </v-row>
-      </v-col>
-    </v-row>
+    <ChangeBtn class="mb-12"></ChangeBtn>
+    <Admin></Admin>
+    <Validator></Validator>
+    <Delivery></Delivery>
   </v-container>
 </template>
 <script>
+import ChangeBtn from '@/components/Admin/ChangeBtn.vue'
+import Validator from '@/components/Admin/Validator.vue'
+import Delivery from '@/components/Admin/Delivery.vue'
+import Admin from '@/components/Admin/Admin.vue'
 export default {
-  name: 'SignUp',
+  components: {
+    ChangeBtn,
+    Delivery,
+    Validator,
+    Admin,
+  },
   data() {
     return {
       //

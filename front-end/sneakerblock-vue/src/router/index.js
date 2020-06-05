@@ -20,15 +20,15 @@ const routes = [
     component: () => import('@/views/SignIn.vue'),
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: () => import('@/views/Cart.vue'),
+    path: '/favorites',
+    name: 'Favorites',
+    component: () => import('@/views/Favorites.vue'),
   },
-  {
-    path: '/delivery',
-    name: 'Delivery',
-    component: () => import('@/views/Delivery.vue'),
-  },
+  // {
+  //   path: '/delivery',
+  //   name: 'Delivery',
+  //   component: () => import('@/views/Delivery.vue'),
+  // },
   {
     path: '/itembuy',
     name: 'ItemBuy',
@@ -53,6 +53,11 @@ const routes = [
     path: '/adminpage',
     name: 'AdminPage',
     component: () => import('@/views/AdminPage.vue'),
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import('@/views/Search.vue'),
   },
 ]
 
