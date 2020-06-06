@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-carousel height="680" hide-delimiter-background show-arrows-on-hover>
+    <v-carousel height="300" hide-delimiter-background show-arrows-on-hover>
       <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" reverse-transition="fade-transition" transition="fade-transition">
         <v-row class="fill-height" align="center" justify="center">
           <div class="display-2 font-weight-bold white--text">
