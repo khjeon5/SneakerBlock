@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="12">
       <v-row justify="center">
-        <h2>Products</h2>
+        <h2>All Sneakers</h2>
       </v-row>
     </v-col>
     <v-col v-for="n in 12" :key="n" cols="6" xs="6" sm="6" md="3" lg="3">
