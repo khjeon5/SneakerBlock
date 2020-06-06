@@ -6,7 +6,7 @@
       </v-row>
     </v-col>
     <v-col cols="12">
-      <v-card max-width="400" class="mx-auto" flat>
+      <v-card max-width="400" class="mx-auto text-end" flat>
         <v-form ref="form" v-model="valid">
           <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
           <v-text-field
@@ -22,11 +22,19 @@
           ></v-text-field>
           <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
           <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required></v-checkbox>
-          <v-btn :disabled="!valid" color="primary" class="">
-            next
-          </v-btn>
         </v-form>
       </v-card>
+
+      <!-- <v-card max-width="400" class="mx-auto mt-3" flat>
+        <v-row justify="space-between">
+          <v-btn color="teal" class="mx-3">
+            BEFORE
+          </v-btn>
+          <v-btn :disabled="!valid" color="primary" class="mx-3">
+            next
+          </v-btn>
+        </v-row>
+      </v-card> -->
     </v-col>
   </v-row>
 </template>
