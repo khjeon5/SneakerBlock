@@ -1,15 +1,14 @@
 <template>
   <v-container>
-    <router-view />
-    <productAllList />
+    <EnrollForm></EnrollForm>
   </v-container>
 </template>
+
 <script>
-import productAllList from '@/components/product/productAllList.vue'
+import EnrollForm from '@/components/product/EnrollForm.vue'
 export default {
-  name: 'Product',
   components: {
-    productAllList,
+    EnrollForm,
   },
   data() {
     return {
@@ -18,3 +17,5 @@ export default {
   },
 }
 </script>
+
+<style></style>
