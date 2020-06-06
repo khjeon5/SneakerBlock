@@ -1,15 +1,15 @@
 <template>
   <v-container>
-    <Wallet></Wallet>
+    <v-row>
+      <v-col>
+        <h2>sdas</h2>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
+
 <script>
-import Wallet from '@/components/User/Wallet.vue'
 export default {
-  name: 'UserWallet',
-  components: {
-    Wallet,
-  },
   data() {
     return {
       //
@@ -17,3 +17,5 @@ export default {
   },
 }
 </script>
+
+<style></style>

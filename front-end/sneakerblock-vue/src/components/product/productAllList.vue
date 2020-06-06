@@ -5,9 +5,9 @@
         <h2>Products</h2>
       </v-row>
     </v-col>
-    <v-col v-for="n in 12" :key="n" cols="6" xs="6" lg="3" md="3">
+    <v-col v-for="n in 12" :key="n" cols="6" xs="6" sm="6" md="3" lg="3">
       <v-row justify="center" class="mx-1">
-        <v-card color="primary" class="max-auto">
+        <v-card color="primary" class="max-auto" @click="$router.push({ name: 'Item' })" style="cursor:pointer">
           <v-container>
             <v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"></v-img>
           </v-container>
