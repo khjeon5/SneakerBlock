@@ -38,13 +38,11 @@ const routes = [
     path: '/product',
     name: 'Product',
     component: () => import('@/views/Product.vue'),
-    children: [
-      {
-        path: '/item',
-        name: 'Item',
-        component: () => import('@/views/ProductItem.vue'),
-      },
-    ],
+  },
+  {
+    path: '/item',
+    name: 'Item',
+    component: () => import('@/views/ProductItem.vue'),
   },
   {
     path: '/userpage',
