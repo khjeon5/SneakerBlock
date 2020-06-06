@@ -7,11 +7,12 @@
     </v-col>
     <v-col v-for="n in 12" :key="n" cols="6" xs="6" sm="6" md="3" lg="3">
       <v-row justify="center" class="mx-1">
-        <v-card color="primary" class="max-auto" @click="$router.push({ name: 'Item' })" style="cursor:pointer">
-          <v-container>
+        <v-card color="grey lighten-3" class="max-auto" @click="$router.push({ name: 'Item' })" style="cursor:pointer" flat>
+          <v-container class="mt-3">
             <v-img src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"></v-img>
           </v-container>
-          <h2 class="text-center">안녕하세요 {{ n }}</h2>
+          <h3 class="text-center mt-3">모델명 {{ n }}</h3>
+          <h2 class="text-center mb-3">₩ 300,000</h2>
         </v-card>
       </v-row>
     </v-col>

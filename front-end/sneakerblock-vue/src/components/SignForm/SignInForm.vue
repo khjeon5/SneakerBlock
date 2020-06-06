@@ -3,7 +3,7 @@
     <v-col cols="12">
       <v-card max-width="400" class="mx-auto" flat>
         <v-alert type="info">
-          아이디와 비밀번호를 입력 해주세요.
+          이메일과 비밀번호를 입력 해주세요.
         </v-alert>
         <!-- <v-alert type="warning">
           이메일 혹은 비밀번호가 틀립니다.
@@ -16,7 +16,7 @@
       </v-row>
     </v-col>
     <v-col cols="12">
-      <v-card max-width="400" class="mx-auto" flat>
+      <v-card max-width="400" class="mx-auto text-end" flat>
         <v-form ref="form" v-model="valid">
           <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
           <v-text-field
@@ -31,8 +31,8 @@
             @click:append="show = !show"
           ></v-text-field>
           <br />
-          <v-btn :disabled="!valid" color="primary" class="">
-            next
+          <v-btn :disabled="!valid" color="teal white--text">
+            로그인
           </v-btn>
         </v-form>
       </v-card>

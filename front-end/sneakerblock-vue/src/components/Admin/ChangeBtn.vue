@@ -6,9 +6,9 @@
     <v-col cols="12">
       <v-card max-width="400" class="mx-auto" flat>
         <v-row justify="space-around">
-          <v-btn color="success">관리</v-btn>
-          <v-btn color="success">검증</v-btn>
-          <v-btn color="success">배달</v-btn>
+          <v-btn color="success" router :to="{ name: 'Admin' }" exact>관리</v-btn>
+          <v-btn color="success" router :to="{ name: 'Validator' }" exact>검증</v-btn>
+          <v-btn color="success" router :to="{ name: 'Delivery' }" exact>배달</v-btn>
         </v-row>
       </v-card>
     </v-col>
