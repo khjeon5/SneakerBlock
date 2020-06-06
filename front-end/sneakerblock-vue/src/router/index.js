@@ -24,11 +24,11 @@ const routes = [
     name: 'Favorites',
     component: () => import('@/views/Favorites.vue'),
   },
-  // {
-  //   path: '/delivery',
-  //   name: 'Delivery',
-  //   component: () => import('@/views/Delivery.vue'),
-  // },
+  {
+    path: '/productenroll',
+    name: 'ProductEnroll',
+    component: () => import('@/views/ProductEnroll.vue'),
+  },
   {
     path: '/itembuy',
     name: 'ItemBuy',
@@ -38,6 +38,13 @@ const routes = [
     path: '/product',
     name: 'Product',
     component: () => import('@/views/Product.vue'),
+    children: [
+      {
+        path: '/item',
+        name: 'Item',
+        component: () => import('@/views/ProductItem.vue'),
+      },
+    ],
   },
   {
     path: '/userpage',
@@ -58,6 +65,11 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: () => import('@/views/Search.vue'),
+  },
+  {
+    path: '/test',
+    name: 'TestPage',
+    component: () => import('@/views/TestPage.vue'),
   },
 ]
 

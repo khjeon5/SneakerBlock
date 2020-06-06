@@ -1,15 +1,14 @@
 <template>
   <v-container>
-    <router-view />
-    <productAllList />
+    <DevTest></DevTest>
   </v-container>
 </template>
+
 <script>
-import productAllList from '@/components/product/productAllList.vue'
+import DevTest from '@/components/DevTest.vue'
 export default {
-  name: 'Product',
   components: {
-    productAllList,
+    DevTest,
   },
   data() {
     return {
@@ -18,3 +17,5 @@ export default {
   },
 }
 </script>
+
+<style></style>
