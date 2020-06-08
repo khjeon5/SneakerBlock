@@ -12,7 +12,7 @@
 - 참고 URL : https://ko.docs.klaytn.com/node/service-chain/getting-started/4nodes-setup-guide
         
         ##service_chain_install##
-
+    
         ##main_service_node##
         wget http://packages.klaytn.net/klaytn/v1.4.2/kscn-v1.4.2-0-linux-amd64.tar.gz
         tar zxvf kscn-v1.4.2-0-linux-amd64.tar.gz
@@ -24,7 +24,7 @@
         vim homi-output/scripts/static-nodes.json
         ##service chain IP와 통신 port 지정##
         scp -r homi-output user@nodeIP:~/
-
+    
         ##node 초기화(모든 node에서 사용)##
         wget http://packages.klaytn.net/klaytn/v1.4.2/kscn-v1.4.2-0-linux-amd64.tar.gz
         tar zxvf kscn-v1.4.2-0-linux-amd64.tar.gz
@@ -38,7 +38,7 @@
         ./kscnd start
         netstat -nlpt | kscn
         ##kscn으로 되어 있는 포트가 30000, 30001(node port), 8551, 8552(rpc port) 열려있으면 kscnd 정상 작동##
-
+    
         ##block check##
         kscn attach --datadir ~/data
         > klay.blockNumber
@@ -55,8 +55,60 @@
 
 
 
+- Host에 Baobab EN 설치
+
+  ```sh
+  wget http://packages.klaytn.net/klaytn/v1.4.2/ken-baobab-v1.4.2-0-linux-amd64.tar.gz
+  tar zxf ken-baobab-vX.X.X-linux-amd64.tar.gz
+  export PATH=$PATH:~/downloaded/path/ken-linux-amd64/bin
+  ```
+
+- EN 환경 설정
+
+  ```sh
+  sudo mkdir -p /var/kend/data
+  
+  vi kend.conf
+  DATA_DIR=/var/kend/data
+  ```
+
+- Fast Sync (https://packages.klaytn.net/baobab/chaindata/)
+
+  ```sh
+  wget https://s3.ap-northeast-2.amazonaws.com/klaytn-chaindata/baobab/klaytn-baobab-chaindata-20200608010611.tar.gz
+  tar -C ~/kend_home -xvf klaytn-baobab-chaindata-latest.tar.gz
+  ```
+
+- 실행/중지/상태
+
+  ```sh
+  kend start //실행
+  kend stop //중지
+  kend status //상태
+  ```
+
+- 콘솔 접근
+
+  ```sh
+  ken attach /var/kend/data/klay.ipc
+  ```
+
+- 블록 확인
+
+  ```sh
+  klay.blockNumber
+  ```
+
+- conf설정
+
+  ```sh
+  RPC_API="admin,debug,klay,miner,net,personal,rpc,txpool,web3"
+  ```
+
+  
 
 ## 3. EN-Servicechain Connect
+
 - Baobob을 통한 앤드포인트(EN)과 서비스체인(SC) 연결
 - 참고 URL : https://ko.docs.klaytn.com/node/service-chain/getting-started/en-scn-connection
 - EN에 Baobab연결
@@ -64,23 +116,23 @@
 
         curl -X GET http://packages.klaytn.net/baobab/genesis.json -o ~/genesis.json
         *안될 시, SC genesis.json 파일로 가능
-        
+    
 - EN 노드 초기화
 
         ken --datadir ~/data init ~/genesis.json
         *EN 재설정 후 다시 초기화(IP가 바뀌어도 다시 초기화해야된다.)
-        
+    
 - EN 노드 설정
 
         NETWORK="baobab"
         SC_MAIN_BRIDGE=1
         DATA_DIR=~/data
         *ken-linux-amd64/conf/kend.conf 파일 수정
-        
+    
 - EN 실행
 
         kend start
-        
+    
 - 블록 확인으로 Baobab 연결 성공 여부 확인
 
         kend attache --datadir ~/data
@@ -94,8 +146,7 @@
 *하나에만 설정을 해야 됨. ::에 IP 및 포트 설정
 
         echo '["kni://0f7aa6499553cdfeb8f21df10c656252ca6039047242eb86278689a87d57a41f9f004720180d1921e9f7632a4c6476f1775a2c381568d8e8c3c9c4a8cfe25bae@::?discport=0"]' > ~/data/main-bridges.json
-        
-
+  
 - SCN 설정 후 재부팅 한다. ksncd.conf 파일 재설정
 
         SC_SUB_BRIDGE=1
@@ -106,4 +157,4 @@
         
         kscn attach --dataidr ~/data
         > subbridge.peers.length
-        
+    
