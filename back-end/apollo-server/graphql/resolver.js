@@ -1,4 +1,5 @@
 import User from '../sneakers/User'
+import Product from '../sneakers/Product'
 
 const resolvers = {
   Query: {
@@ -20,6 +21,12 @@ const resolvers = {
     async getUser(root, { _id }) {
       return await User.findById(_id)
     },
+    async allProduct() {
+      return await Product.find()
+    },
+    async getProduct(){
+      return await Product.findById(_id)
+    },
   },
   Mutation: {
     async createUser(root, { input }) {
@@ -30,6 +37,15 @@ const resolvers = {
     },
     async deleteUser(root, { _id }) {
       return await User.findOneAndDelete({ _id })
+    },
+    async createProduct(root, { input }) {
+      return await Product.create(input)
+    },
+    async updateProduct(root, { _id, input }) {
+      return await Product.findOneAndUpdate({ _id }, input, { new: true })
+    },
+    async deleteProduct(root, { _id }) {
+      return await Product.findOneAndDelete({ _id })
     },
   },
 }

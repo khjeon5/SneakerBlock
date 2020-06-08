@@ -20,14 +20,14 @@ const routes = [
     component: () => import('@/views/SignIn.vue'),
   },
   {
-    path: '/cart',
-    name: 'Cart',
-    component: () => import('@/views/Cart.vue'),
+    path: '/favorites',
+    name: 'Favorites',
+    component: () => import('@/views/Favorites.vue'),
   },
   {
-    path: '/delivery',
-    name: 'Delivery',
-    component: () => import('@/views/Delivery.vue'),
+    path: '/productenroll',
+    name: 'ProductEnroll',
+    component: () => import('@/views/ProductEnroll.vue'),
   },
   {
     path: '/itembuy',
@@ -38,6 +38,11 @@ const routes = [
     path: '/product',
     name: 'Product',
     component: () => import('@/views/Product.vue'),
+  },
+  {
+    path: '/item',
+    name: 'Item',
+    component: () => import('@/views/ProductItem.vue'),
   },
   {
     path: '/userpage',
@@ -53,6 +58,38 @@ const routes = [
     path: '/adminpage',
     name: 'AdminPage',
     component: () => import('@/views/AdminPage.vue'),
+    children: [
+      {
+        path: '/admin',
+        name: 'Admin',
+        component: () => import('@/components/Admin/Admin.vue'),
+      },
+      {
+        path: '/validator',
+        name: 'Validator',
+        component: () => import('@/components/Admin/Validator.vue'),
+      },
+      {
+        path: '/delivery',
+        name: 'Delivery',
+        component: () => import('@/components/Admin/Delivery.vue'),
+      },
+    ],
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: () => import('@/views/Search.vue'),
+  },
+  {
+    path: '/itembuy',
+    name: 'ItemBuy',
+    component: () => import('@/views/ItemBuy.vue'),
+  },
+  {
+    path: '/test',
+    name: 'TestPage',
+    component: () => import('@/views/TestPage.vue'),
   },
 ]
 
