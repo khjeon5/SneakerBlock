@@ -33,15 +33,17 @@ input UserInput {
   pubKey: String
 }
 
+
 type Product {
   _id: ID!
   name: String!
-  price: Int!
-  image: String!
-}
+  price: String!
+  img: String!
+
 
 input ProductInput {
   name: String!
-  price: Int!
-  image: String!
+  price: String!
+  img: String!
 }
+
