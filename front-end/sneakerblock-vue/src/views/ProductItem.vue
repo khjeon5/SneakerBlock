@@ -1,15 +1,15 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col>
-        <h2>sdas</h2>
-      </v-col>
-    </v-row>
+    <ItemDetail></ItemDetail>
   </v-container>
 </template>
 
 <script>
+import ItemDetail from '@/components/product/ItemDetail.vue'
 export default {
+  components: {
+    ItemDetail,
+  },
   data() {
     return {
       //

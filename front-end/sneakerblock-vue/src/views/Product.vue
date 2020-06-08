@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <router-view />
     <productAllList />
   </v-container>
 </template>

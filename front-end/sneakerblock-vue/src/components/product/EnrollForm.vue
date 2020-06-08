@@ -4,11 +4,11 @@
       <h2 class="text-center">스니커즈 판매 등록</h2>
     </v-col>
     <v-col cols="12" xs="12" sm="12" md="6" lg="6">
-      <v-card class="max-auto" flat>
+      <v-card class="max-auto" flat color="grey lighten-3">
         <v-container>
           <v-row>
             <v-col cols="12">
-              <v-row justify="center" class="mx-1">
+              <v-row justify="center" class="mx-1 mt-12 mb-6">
                 <v-card class="max-auto" flat>
                   <v-img src="https://picsum.photos/300/300?random"></v-img>
                 </v-card>
@@ -16,7 +16,7 @@
             </v-col>
             <v-col cols="12">
               <v-row justify="center" class="mx-1">
-                <v-card class="max-auto" flat>
+                <v-card class="max-auto mb-12" flat color="grey lighten-3">
                   <v-file-input :rules="rules" accept="image/png, image/jpeg, image/bmp" placeholder="Pick an image" prepend-icon="mdi-camera" label="upload image"></v-file-input>
                 </v-card>
               </v-row>
@@ -26,9 +26,9 @@
       </v-card>
     </v-col>
 
-    <v-col cols="12" xs="12" sm="12" md="6" lg="6">
+    <v-col cols="12" xs="12" sm="12" md="6" lg="6" class="pt-0">
       <v-card class="max-auto" flat>
-        <v-container>
+        <v-container class="pt-0">
           <v-row>
             <v-col cols="12">
               <h1 class="mb-3">모델명</h1>

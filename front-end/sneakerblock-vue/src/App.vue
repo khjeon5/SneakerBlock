@@ -85,8 +85,8 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="#004D40" dark flat>
-      <v-toolbar-title>Sneaker Block</v-toolbar-title>
+    <v-app-bar app color="teal darken-4" dark flat>
+      <v-toolbar-title>SNEAKER BLOCK</v-toolbar-title>
       <v-btn color="success" @click="screen = !screen">screen</v-btn>
       <v-spacer></v-spacer>
       <div v-if="screen">
@@ -108,6 +108,20 @@
     <v-content>
       <router-view />
     </v-content>
+
+    <v-footer color="teal darken-4 white--text" class="pt-6">
+      <v-spacer></v-spacer>
+      <div class="mb-6">
+        <h1><strong>SNEAKER BLOCK</strong></h1>
+        <h4><strong>with Blockchain Playground</strong></h4>
+      </div>
+      <v-spacer></v-spacer>
+      <div class="mb-6">
+        서울 마포구 공덕동 254-5, 공덕역 4번 출구, 신용보증기금빌딩 15층 알파룸 <br />
+        <strong>Copyright © 2020 SNEAKER BLOCK. All Rights Reserved.</strong>
+      </div>
+      <v-spacer></v-spacer>
+    </v-footer>
   </v-app>
 </template>
 
@@ -124,6 +138,7 @@ export default {
       drawer: false,
       screen: true,
       search: false,
+      links: ['Home', 'About Us', 'Team', 'Services', 'Blog', 'Contact Us'],
     }
   },
 }
