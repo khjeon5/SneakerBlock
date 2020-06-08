@@ -28,3 +28,18 @@ input UserInput {
   pubKey: String
 }
 
+<<<<<<< Updated upstream
+=======
+type Product {
+  _id: ID!
+  name: String!
+  price: String!
+  img: String!
+}
+
+input ProductInput {
+  name: String!
+  price: String!
+  img: String!
+}
+>>>>>>> Stashed changes
