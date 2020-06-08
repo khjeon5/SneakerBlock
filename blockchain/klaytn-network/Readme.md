@@ -50,19 +50,28 @@
 - 참고 URL : https://ko.docs.klaytn.com/node/service-chain/getting-started/en-scn-connection
 - EN에 Baobab연결
 - EN 서버에 genesis.json 다운로드
+
         curl -X GET http://packages.klaytn.net/baobab/genesis.json -o ~/genesis.json
         *안될 시, SC genesis.json 파일로 가능
+        
 - EN 노드 초기화
+
         ken --datadir ~/data init ~/genesis.json
         *EN 재설정 후 다시 초기화(IP가 바뀌어도 다시 초기화해야된다.)
+        
 - EN 노드 설정
+
         NETWORK="baobab"
         SC_MAIN_BRIDGE=1
         DATA_DIR=~/data
         *ken-linux-amd64/conf/kend.conf 파일 수정
+        
 - EN 실행
+
         kend start
+        
 - 블럭 확인으로 Baobab 연결 성공 여부 확인
+
         kend attache --datadir ~/data
         > klay.blockNumber
         1234
