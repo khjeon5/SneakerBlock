@@ -45,7 +45,18 @@
         43
         ##blockNumber가 0이 아니면 정상 작동##
 
-## 2. EN-Servicechain Connect
+## 2. Endpoint Node in Cloud
+- 클레이튼 테스트넷 baobab 엔드포인트 GCP에 구축
+- 불록 동기화를 위해 클레이튼 테스트넷 baobab은 50GB, 메인넷 cypress의 경우 700GB정도의 스냅셧을 다운로드 받아야 함
+- 블록동기화된 en에 klay.blockNumber 명령어로 현재 블록 수를 확인
+- 엔드포인트 노드 기본 사양
+**8core, RAM: 32GB, SSD: 50GB**
+- 참고링크: https://ko.docs.klaytn.com/node/endpoint-node/installation-guide/installation-guide
+
+
+
+
+## 3. EN-Servicechain Connect
 - Baobob을 통한 앤드포인트(EN)과 서비스체인(SC) 연결
 - 참고 URL : https://ko.docs.klaytn.com/node/service-chain/getting-started/en-scn-connection
 - EN에 Baobab연결
