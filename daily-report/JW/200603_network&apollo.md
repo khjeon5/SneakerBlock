@@ -8,7 +8,8 @@
 **서비스체인 기본 사양: 4core, RAM: 16GB, SSD: 50GB**        
 - 같은 인스턴스 내에 통신 시, 방화벽을 내림.(ufw disable)        
 **GCP 내 자체 정책이 있으므로 외부 공격 방지 가능**        
-- GCP을 사용할 경우 lrzsz등 로컬 파일 업로드 기능이 차단되어 있으므로 gcloud 기능을 사용하는 것을 추천        
+- GCP을 사용할 경우 lrzsz등 로컬 파일 업로드 기능이 차단되어 있으므로 gcloud 기능을 사용하는 것을 추천    
+- 참고 URL : https://ko.docs.klaytn.com/node/service-chain/getting-started/4nodes-setup-guide
         
         ##service_chain_install##
 
