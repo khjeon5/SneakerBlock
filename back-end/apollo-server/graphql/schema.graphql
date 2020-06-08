@@ -39,7 +39,7 @@ type Product {
   name: String!
   price: String!
   img: String!
-
+}
 
 input ProductInput {
   name: String!
