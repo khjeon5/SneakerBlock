@@ -70,9 +70,29 @@
 
         kend start
         
-- 블럭 확인으로 Baobab 연결 성공 여부 확인
+- 블록 확인으로 Baobab 연결 성공 여부 확인
 
         kend attache --datadir ~/data
         > klay.blockNumber
         1234
+        > mainbridge.nodeInfo.kni
+        *kni 확인 후 따로 정보 저장 필수
 
+- SCN 노드 하나에 main-bridge.json 파일생성
+- data dir안에 main-bridge.json 파일 생성
+*하나에만 설정을 해야 됨. ::에 IP 및 포트 설정
+
+        echo '["kni://0f7aa6499553cdfeb8f21df10c656252ca6039047242eb86278689a87d57a41f9f004720180d1921e9f7632a4c6476f1775a2c381568d8e8c3c9c4a8cfe25bae@::?discport=0"]' > ~/data/main-bridges.json
+        
+
+- SCN 설정 후 재부팅 한다. ksncd.conf 파일 재설정
+
+        SC_SUB_BRIDGE=1
+        SC_PARENT_CHAIN_ID=1001
+        SC_TX_PERIOD=10
+        
+        kscnd restart
+        
+        kscn attach --dataidr ~/data
+        > subbridge.peers.length
+        
