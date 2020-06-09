@@ -20,6 +20,10 @@ const UserSchema = new Schema({
   },
   pubKey: {
     type: String
+  },
+  lovely: {
+    type: String,
+    required: true
   }
 })
 
