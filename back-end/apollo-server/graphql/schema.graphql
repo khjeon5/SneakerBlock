@@ -33,7 +33,10 @@ input UserInput {
   pubKey: String
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> ace68c33df1a6df20b6b2d9456e3c622d756adca
 type Product {
   _id: ID!
   name: String!
@@ -46,4 +49,7 @@ input ProductInput {
   price: String!
   img: String!
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> ace68c33df1a6df20b6b2d9456e3c622d756adca
