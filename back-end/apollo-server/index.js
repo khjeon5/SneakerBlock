@@ -2,7 +2,7 @@ import {ApolloServer, makeExecutableSchema} from 'apollo-server'
 import mongoose from 'mongoose'
 import resolvers from './graphql/resolver'
 import fs from 'fs'
-
+// 
 
 const dbName = "" //DB name
 const dbpassword = ""

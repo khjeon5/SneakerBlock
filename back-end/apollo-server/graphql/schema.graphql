@@ -1,7 +1,9 @@
 type Query {
   hello: String!
   allUsers: [User]
+  allProduct: [Product]
   getUser(_id: ID!): User
+  getProduct(_id: ID!): Product
   emailVerify(email: String!): Boolean!
 }
 
@@ -9,6 +11,9 @@ type Mutation {
   createUser(input: UserInput): User
   updateUser(_id: ID!, input: UserInput): User
   deleteUser(_id: ID!): User
+  createProduct(input: ProductInput): Product
+  updateProduct(_id: ID!, input: ProductInput): Product
+  deleteProduct(_id: ID!): Product
 }
 
 type User {
@@ -28,6 +33,10 @@ input UserInput {
   pubKey: String
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ace68c33df1a6df20b6b2d9456e3c622d756adca
 type Product {
   _id: ID!
   name: String!
@@ -40,3 +49,7 @@ input ProductInput {
   price: String!
   img: String!
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ace68c33df1a6df20b6b2d9456e3c622d756adca

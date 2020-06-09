@@ -35,7 +35,7 @@ import gql from 'graphql-tag'
 
 export default {
   apollo: {
-  allProduct: gql`
+    allProduct: gql`
       query {
         allProduct {
           _id
@@ -50,9 +50,9 @@ export default {
   data() {
     return {
       show: false,
+      imgsNum: ['1.jpg'],
     }
   },
-
 }
 </script>
 
