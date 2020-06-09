@@ -28,8 +28,6 @@ input UserInput {
   pubKey: String
 }
 
-<<<<<<< Updated upstream
-=======
 type Product {
   _id: ID!
   name: String!
@@ -42,4 +40,3 @@ input ProductInput {
   price: String!
   img: String!
 }
->>>>>>> Stashed changes
