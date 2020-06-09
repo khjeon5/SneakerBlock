@@ -1,13 +1,15 @@
 <template>
   <v-container>
     <SignUpBar></SignUpBar>
-    <SignUpForm v-if="btn == 0"></SignUpForm>
-    <SignUpWallet v-if="btn == 1"></SignUpWallet>
-    <SignUpEnd v-if="btn == 2"></SignUpEnd>
+    <SignUpForm v-show="signUpcount == 0"></SignUpForm>
+    <SignUpWallet v-show="signUpcount == 1"></SignUpWallet>
+    <SignUpEnd v-show="signUpcount == 2"></SignUpEnd>
     <SignUpBtn></SignUpBtn>
   </v-container>
 </template>
 <script>
+import { mapState } from 'vuex'
+
 import SignUpBar from '@/components/SignForm/SignUpBar.vue'
 import SignUpForm from '@/components/SignForm/SignUpForm.vue'
 import SignUpWallet from '@/components/SignForm/SignUpWallet.vue'
@@ -26,6 +28,9 @@ export default {
     return {
       btn: 0,
     }
+  },
+  computed: {
+    ...mapState(['signUpcount']),
   },
 }
 </script>
