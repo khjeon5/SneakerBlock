@@ -35,6 +35,7 @@ input UserInput {
   lovely: String
 }
 
+
 input Userupdate {
   email: String!
   password: String!
@@ -75,3 +76,4 @@ input Productupdate {
   manufac: String
   lovely: Int
   }
+
