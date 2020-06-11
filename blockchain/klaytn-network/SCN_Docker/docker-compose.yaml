@@ -1,0 +1,78 @@
+version: '3'
+
+networks:
+  service-chain:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.168.7.0/21
+
+services:
+  main-node:
+    image: klaytn/klaytn:latest
+    tty: true
+    ports: 
+      - "30000:30000"
+    volumes:
+      - ./data:/var
+    #command: /bin/sh
+    container_name: main-service-chain
+    networks:
+      service-chain:
+        ipv4_address: 172.168.7.10
+
+  secound-node:
+    image: klaytn/klaytn:latest
+    tty: true
+    ports: 
+      - "30001:30000"
+    depends_on:
+      - main-node
+    volumes:
+      - ./data:/var
+    #command: /bin/sh
+    container_name: secound-service-chain
+    networks:
+      service-chain:
+        ipv4_address: 172.168.7.20
+
+  third-node:
+    image: klaytn/klaytn:latest
+    tty: true
+    ports: 
+      - "30002:30000"
+    depends_on:
+      - secound-node
+    volumes:
+      - ./data:/var
+    #command: /bin/sh
+    container_name: third-service-chain
+    networks:
+      service-chain:
+        ipv4_address: 172.168.7.30
+
+  forth-node:
+    image: klaytn/klaytn:latest
+    tty: true
+    ports: 
+      - "30003:30000"
+    depends_on:
+      - third-node
+    volumes:
+      - ./data:/var
+    #command: /bin/sh
+    container_name: forth-service-chain
+    networks:
+      service-chain:
+        ipv4_address: 172.168.7.40
+
+
+#############직접 쳐야될 명령어들 입니다.#############
+#docker exec main-service-chain sh -c "./var/main_SC.sh"
+#docker exec secound-service-chain sh -c "./var/sub_SC.sh"
+#docker exec third-service-chain sh -c "./var/sub_SC.sh"
+#docker exec forth-service-chain sh -c "./var/sub_SC.sh"
+#docker exec main-service-chain sh -c "kscnd start"
+#docker exec secound-service-chain sh -c "kscnd start"
+#docker exec third-service-chain sh -c "kscnd start"
+#docker exec forth-service-chain sh -c "kscnd start"
