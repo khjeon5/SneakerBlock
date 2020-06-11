@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 type Query {
   hello: String!
   allUsers: [User]
@@ -28,3 +29,84 @@ input UserInput {
   pubKey: String
 }
 
+=======
+type Query {
+  hello: String!
+  allUsers: [User]
+  allProduct: [Product]
+  getUser(_id: ID!): User
+  getProduct(_id: ID!): Product
+  emailVerify(email: String!): Boolean!
+}
+
+type Mutation {
+  createUser(input: UserInput): User
+  updateUser(_id: ID!, input: Userupdate): User
+  deleteUser(_id: ID!): User
+  createProduct(input: ProductInput): Product
+  updateProduct(_id: ID!, input: Productupdate): Product
+  deleteProduct(_id: ID!): Product
+}
+
+type User {
+  _id: ID!
+  email: String!
+  password: String!
+  name: String!
+  address: String!
+  pubKey: String!
+  lovely: String
+}
+
+input UserInput {
+  email: String!
+  password: String!
+  name: String!
+  address: String
+  pubKey: String
+  lovely: String
+}
+
+
+input Userupdate {
+  email: String!
+  password: String!
+  lovely: String
+}
+
+type Product {
+  _id: ID!
+  name: String!
+  price: Int!
+  img: String!
+  seller: String
+  description: String
+  color: String
+  date: String
+  validator: String
+  manufac: String
+  lovely: Int
+}
+
+input ProductInput {
+  name: String!
+  price: Int!
+  img: String!
+  seller: String
+  description: String
+  color: String
+  date: String
+  validator: String
+  manufac: String
+  }
+
+input Productupdate {
+  price: Int!
+  img: String!
+  description: String
+  validator: String
+  manufac: String
+  lovely: Int
+  }
+
+>>>>>>> 569399a5678910ba65d79ab5facc110b23e6d7c9

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <v-container>
     <v-row>
@@ -19,3 +20,25 @@ export default {
   },
 }
 </script>
+=======
+<template>
+  <v-container>
+    <ChangeBtn class="mb-12"></ChangeBtn>
+    <router-view />
+  </v-container>
+</template>
+<script>
+import ChangeBtn from '@/components/Admin/ChangeBtn.vue'
+
+export default {
+  components: {
+    ChangeBtn,
+  },
+  data() {
+    return {
+      //
+    }
+  },
+}
+</script>
+>>>>>>> 569399a5678910ba65d79ab5facc110b23e6d7c9
