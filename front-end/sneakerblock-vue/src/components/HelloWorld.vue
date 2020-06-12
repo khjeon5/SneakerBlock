@@ -3,18 +3,14 @@
     <v-carousel height="300" hide-delimiter-background show-arrows-on-hover>
       <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" reverse-transition="fade-transition" transition="fade-transition">
         <v-row class="fill-height" align="center" justify="center">
-          <div class="display-2 font-weight-bold white--text">
-            스니커 블록
-          </div>
+          <div class="display-2 font-weight-bold white--text">Sneaker block</div>
         </v-row>
       </v-carousel-item>
     </v-carousel>
     <v-container>
       <v-row>
         <v-col>
-          <v-row justify="center">
-            <h2>스니커블록</h2>
-          </v-row>
+          <v-row justify="center"> </v-row>
         </v-col>
       </v-row>
     </v-container>

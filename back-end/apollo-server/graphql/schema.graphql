@@ -45,7 +45,7 @@ input Userupdate {
 type Product {
   _id: ID!
   name: String!
-  price: Int!
+  price: String!
   img: String!
   seller: String
   description: String
@@ -58,7 +58,7 @@ type Product {
 
 input ProductInput {
   name: String!
-  price: Int!
+  price: String!
   img: String!
   seller: String
   description: String
@@ -69,7 +69,7 @@ input ProductInput {
   }
 
 input Productupdate {
-  price: Int!
+  price: String!
   img: String!
   description: String
   validator: String

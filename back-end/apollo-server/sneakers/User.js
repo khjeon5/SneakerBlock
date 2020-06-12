@@ -23,7 +23,7 @@ const UserSchema = new Schema({
   },
   lovely: {
     type: String,
-    required: true
+    required: false
   }
 })
 

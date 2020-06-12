@@ -9,6 +9,9 @@ export default new Vuex.Store({
   state: {
     signUpcount: 0,
     signupBarPC: 33,
+    vxemail: '',
+    vxpw: '',
+    vxname: '',
   },
   getters: {
     //

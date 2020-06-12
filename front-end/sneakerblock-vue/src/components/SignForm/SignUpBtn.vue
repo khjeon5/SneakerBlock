@@ -25,13 +25,19 @@
         </v-row>
       </v-card>
     </v-col>
-    {{ createAC }}
+    {{ createAC.privateKey }}<br />
+    {{ createAC.address }}<br />
+    {{ this.vxemail }}<br />
+    {{ vxpw }}<br />
+    {{ vxname }}<br />
   </v-row>
 </template>
 
 <script>
 // import { caver } from '@/klaytn/caver'
 import { mapState, mapMutations } from 'vuex'
+//import { CREATE_USER_MUTATION } from '@/constants/graphql'
+import gql from 'graphql-tag'
 export default {
   data() {
     return {
@@ -40,12 +46,47 @@ export default {
     }
   },
   computed: {
-    ...mapState(['signUpcount']),
+    ...mapState(['signUpcount', 'vxemail', 'vxpw', 'vxname']),
     ...mapState('wallet', ['createAC']),
   },
   methods: {
     ...mapMutations(['next', 'before', 'join', 'toSignin']),
     ...mapMutations('wallet', ['createAccount']),
+    toSignin() {
+      console.log('clicked')
+      this.$apollo.mutate({
+        mutation: gql`
+          mutation createUser($email: String!, $password: String!, $name: String!, $address: String!, $pubkey: String!) {
+            createUser(input: { email: $email, password: $password, name: $name, address: $address, pubkey: $pubkey }) {
+              _id
+              email
+              password
+              address
+              name
+              pubKey
+            }
+          }
+        `,
+        variables: {
+          email: this.vxemail,
+          password: this.vxpw,
+          name: this.vxname,
+          address: this.createAC.address,
+          pubkey: this.createAC.privateKey,
+        },
+      }),
+        // this.$apollo.mutate({
+        //   mutation: CREATE_USER_MUTATION,
+        //   variables: {
+        //     email: this.vxemail,
+        //     password: this.vxpw,
+        //     name: this.vxname,
+        //     address: this.createAC.address,
+        //     pubkey: this.createAC.privateKey,
+        //   },
+        // }),
+        console.log('singin completed')
+    },
   },
 }
 </script>
