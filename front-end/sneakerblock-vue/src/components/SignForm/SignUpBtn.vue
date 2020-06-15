@@ -66,8 +66,7 @@ export default {
           address: this.createAC.address,
           pubkey: this.createAC.privateKey,
         },
-      }),
-
+      })
     },
   },
 }
