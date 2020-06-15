@@ -16,7 +16,7 @@
           </v-btn>
         </v-row>
         <v-row justify="end" v-if="btn == 2">
-          <v-btn :disabled="!valid" color="primary" class="mx-3" router :to="{ name: 'SignIn' }">
+          <v-btn :disabled="!valid" color="primary" class="mx-3" @click="toSignin()" router :to="{ name: 'SignIn' }">
             Sign In
           </v-btn>
         </v-row>
@@ -26,6 +26,10 @@
 </template>
 
 <script>
+// import { caver } from '@/klaytn/caver'
+import { mapState, mapMutations } from 'vuex'
+import { CREATE_USER_MUTATION } from '@/constants/graphql'
+//import gql from 'graphql-tag'
 export default {
   data() {
     return {
@@ -34,17 +38,22 @@ export default {
     }
   },
   methods: {
-    next() {
-      this.btn++
-    },
-    join() {
-      this.btn++
-    },
-    signin() {
-      //
-    },
-    before() {
-      this.btn--
+    ...mapMutations(['next', 'before', 'join', 'toSignin']),
+    ...mapMutations('wallet', ['createAccount']),
+    ...mapState(['vxemail', 'vxname', 'vxpw']),
+    toSignin() {
+      console.log('clicked')
+      this.$apollo.mutate({
+        mutation: CREATE_USER_MUTATION,
+        variables: {
+          email: this.vxemail,
+          name: this.vxname,
+          password: this.vxpw,
+          address: this.createAC.address,
+          pubkey: this.createAC.privateKey,
+        },
+      }),
+        console.log('singin completed')
     },
   },
 }

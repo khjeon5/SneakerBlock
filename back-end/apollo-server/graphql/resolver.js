@@ -1,5 +1,7 @@
-import User from '../sneakers/User'
+//var User = require('../sneakers/User');
 import Product from '../sneakers/Product'
+import User from '../sneakers/User'
+
 
 const resolvers = {
   Query: {
@@ -46,6 +48,23 @@ const resolvers = {
     },
     async deleteProduct(root, { _id }) {
       return await Product.findOneAndDelete({ _id })
+    },
+    async login(_, { email, password }){
+      console.log(email)
+      console.log(password)
+      var correctUser ={}
+      await User.find({}, (err, users)=>{
+        users.forEach((user)=>{
+          if(user.email===email && user.password===password){
+            correctUser = user
+          }else{
+            correctUser = 'null'
+          }
+        })
+      });
+      // console.log(correctUser)
+      return correctUser
+
     },
   },
 }

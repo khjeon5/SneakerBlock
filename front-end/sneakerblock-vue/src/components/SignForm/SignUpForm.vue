@@ -36,10 +36,14 @@
         </v-row>
       </v-card> -->
     </v-col>
+    {{ vxemail }}
+    {{ email }}
+    {{ vxPubKey }}
   </v-row>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -57,6 +61,9 @@ export default {
       PubKey: null,
       nexttwo: null,
     }
+  },
+  computed: {
+    ...mapState(['vxemail', 'vxpw', 'vxname', 'vxPubKey']),
   },
   methods: {
     onDone() {
