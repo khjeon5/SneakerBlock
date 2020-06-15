@@ -31,16 +31,19 @@
             @click:append="show = !show"
           ></v-text-field>
           <br />
-          <v-btn :disabled="!valid" color="teal white--text">
+          <v-btn :disabled="!valid" color="teal white--text" @click="login">
             로그인
           </v-btn>
         </v-form>
       </v-card>
     </v-col>
+    {{ this.vxPubKey }}
   </v-row>
 </template>
 
 <script>
+import { GET_USER_QUERY } from '@/constants/graphql'
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -59,6 +62,9 @@ export default {
       nexttwo: null,
     }
   },
+  computed: {
+    ...mapState(['vxPubKey']),
+  },
   methods: {
     onDone() {
       this.alertvalue = true
@@ -74,6 +80,25 @@ export default {
 
         alert('이미 있는 이메일입니다.')
       }
+    },
+    login() {
+      this.$apollo
+        .mutate({
+          mutation: GET_USER_QUERY,
+          variables: {
+            email: this.email,
+            password: this.password,
+          },
+        })
+        .then(result => {
+          // const id = result.data.login._id
+          this.$store.state.vxemail = result.data.login.pubKey
+          alert('login Success')
+          this.$router.push({ path: '/' })
+        })
+        .catch(error => {
+          alert(error)
+        })
     },
   },
 }
