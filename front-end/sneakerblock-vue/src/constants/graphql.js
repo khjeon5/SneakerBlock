@@ -1,5 +1,6 @@
 import gql from 'graphql-tag'
 
+
 const CREATE_USER_MUTATION = gql`
   mutation createUser($email: String!, $password: String!, $pubkey: String!, $name: String!, $address: String!) {
     createUser(input: { email: $email, password: $password, address: $address, name: $name, pubKey: $pubkey }) {
@@ -21,3 +22,4 @@ const GET_USER_QUERY = gql`
 `
 
 export { CREATE_USER_MUTATION, GET_USER_QUERY }
+

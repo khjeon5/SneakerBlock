@@ -9,13 +9,12 @@ export default new Vuex.Store({
   state: {
     signUpcount: 0,
     signupBarPC: 33,
-<<<<<<< HEAD
+
     vxemail: '',
     vxpw: '',
     vxname: '',
     vxPubKey: '',
-=======
->>>>>>> 10572d90f164a7fa78921e9ea02a30f9bab13742
+
   },
   getters: {
     //

@@ -25,15 +25,21 @@
         </v-row>
       </v-card>
     </v-col>
-    {{ createAC }}
+    {{ createAC.privateKey }}<br />
+    {{ createAC.address }}<br />
+    {{ this.vxemail }}<br />
+    {{ vxpw }}<br />
+    {{ vxname }}<br />
   </v-row>
 </template>
 
 <script>
 // import { caver } from '@/klaytn/caver'
 import { mapState, mapMutations } from 'vuex'
+
 import { CREATE_USER_MUTATION } from '@/constants/graphql'
 //import gql from 'graphql-tag'
+
 export default {
   data() {
     return {
@@ -42,7 +48,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['signUpcount']),
+    ...mapState(['signUpcount', 'vxemail', 'vxpw', 'vxname']),
     ...mapState('wallet', ['createAC']),
   },
   methods: {
@@ -55,13 +61,13 @@ export default {
         mutation: CREATE_USER_MUTATION,
         variables: {
           email: this.vxemail,
-          name: this.vxname,
           password: this.vxpw,
+          name: this.vxname,
           address: this.createAC.address,
           pubkey: this.createAC.privateKey,
         },
       }),
-        console.log('singin completed')
+
     },
   },
 }

@@ -8,7 +8,7 @@
     <v-col cols="12">
       <v-card max-width="400" class="mx-auto text-end" flat>
         <v-form ref="form" v-model="valid">
-          <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+          <v-text-field v-model="email" :rules="emailRules" label="E-mail" required :value="vxemail" @input="updateEmail"></v-text-field>
           <v-text-field
             :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
             v-model="password"
@@ -19,26 +19,16 @@
             value=""
             required
             @click:append="show = !show"
+            @input="updatePassword"
           ></v-text-field>
-          <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required></v-text-field>
+          <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Name" required @input="updateName">aaaa</v-text-field>
           <v-checkbox v-model="checkbox" :rules="[v => !!v || 'You must agree to continue!']" label="Do you agree?" required></v-checkbox>
         </v-form>
       </v-card>
-
-      <!-- <v-card max-width="400" class="mx-auto mt-3" flat>
-        <v-row justify="space-between">
-          <v-btn color="teal" class="mx-3">
-            BEFORE
-          </v-btn>
-          <v-btn :disabled="!valid" color="primary" class="mx-3">
-            next
-          </v-btn>
-        </v-row>
-      </v-card> -->
     </v-col>
     {{ vxemail }}
     {{ email }}
-    {{ vxPubKey }}
+
   </v-row>
 </template>
 
@@ -64,8 +54,18 @@ export default {
   },
   computed: {
     ...mapState(['vxemail', 'vxpw', 'vxname', 'vxPubKey']),
+
   },
   methods: {
+    updateEmail() {
+      this.$store.state.vxemail = this.email
+    },
+    updatePassword() {
+      this.$store.state.vxpw = this.password
+    },
+    updateName() {
+      this.$store.state.vxname = this.name
+    },
     onDone() {
       this.alertvalue = true
     },
