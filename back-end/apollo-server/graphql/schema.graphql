@@ -9,11 +9,12 @@ type Query {
 
 type Mutation {
   createUser(input: UserInput): User
-  updateUser(_id: ID!, input: UserInput): User
+  updateUser(_id: ID!, input: Userupdate): User
   deleteUser(_id: ID!): User
   createProduct(input: ProductInput): Product
-  updateProduct(_id: ID!, input: ProductInput): Product
+  updateProduct(_id: ID!, input: Productupdate): Product
   deleteProduct(_id: ID!): Product
+  login(email : String! , password : String!) : User
 }
 
 type User {
@@ -23,6 +24,7 @@ type User {
   name: String!
   address: String!
   pubKey: String!
+  lovely: String
 }
 
 input UserInput {
@@ -31,19 +33,48 @@ input UserInput {
   name: String!
   address: String
   pubKey: String
+  lovely: String
 }
 
+
+input Userupdate {
+  email: String!
+  password: String!
+  lovely: String
+}
 
 type Product {
   _id: ID!
   name: String!
   price: String!
   img: String!
+  seller: String
+  description: String
+  color: String
+  date: String
+  validator: String
+  manufac: String
+  lovely: Int
 }
 
 input ProductInput {
   name: String!
   price: String!
   img: String!
-}
+  seller: String
+  description: String
+  color: String
+  date: String
+  validator: String
+  manufac: String
+  }
+
+input Productupdate {
+  price: String!
+  img: String!
+  description: String
+  validator: String
+  manufac: String
+  lovely: Int
+  }
 

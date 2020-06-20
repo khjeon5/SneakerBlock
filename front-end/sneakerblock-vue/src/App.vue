@@ -86,8 +86,8 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="teal darken-4" dark flat>
-      <v-toolbar-title>SNEAKER BLOCK</v-toolbar-title>
-      <v-btn color="success" @click="screen = !screen">screen</v-btn>
+      <v-toolbar-title @click="$router.push({ name: 'Home' })" style="cursor:pointer">SB</v-toolbar-title>
+      <v-btn color="success" @click="screen = !screen" style="margin-left:20px">screen</v-btn>
       <v-spacer></v-spacer>
       <div v-if="screen">
         <span @click="$router.push({ name: 'TestPage' })" style="cursor:pointer" class="mx-2">TestPage</span>

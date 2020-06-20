@@ -2,7 +2,7 @@
   <v-row>
     <v-col cols="12">
       <v-row justify="center">
-        <v-progress-linear color="teal darken-3" height="30" class="mx-10 white--text" value="33">
+        <v-progress-linear color="teal darken-3" height="30" class="mx-10 white--text" :value="signupBarPC">
           <v-row class="font-weight-bold text-center mt-4">
             <v-col cols="4">
               <p class="ml-3">회원가입</p>
@@ -21,11 +21,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
       //
     }
+  },
+  computed: {
+    ...mapState(['signupBarPC']),
   },
 }
 </script>
