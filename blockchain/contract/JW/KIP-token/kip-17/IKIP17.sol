@@ -43,7 +43,6 @@ contract IKIP17 is IKIP13 {
     function transferFrom(address from, address to, uint256 tokenId) public;
     function approve(address to, uint256 tokenId) public;
     function getApproved(uint256 tokenId) public view returns (address operator);
-
     function setApprovalForAll(address operator, bool _approved) public;
     function isApprovedForAll(address owner, address operator) public view returns (bool);
 

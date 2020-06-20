@@ -89,8 +89,8 @@ contract KIP17Enumerable is KIP13, KIP17, IKIP17Enumerable {
      * @param to address the beneficiary that will own the minted token
      * @param tokenId uint256 ID of the token to be minted
      */
-    function _mint(address to, uint256 tokenId) internal {
-        super._mint(to, tokenId);
+    function _mint(address to, uint256 tokenId, string memory sneakers_name) internal {
+        super._mint(to, tokenId, sneakers_name);
 
         _addTokenToOwnerEnumeration(to, tokenId);
 
