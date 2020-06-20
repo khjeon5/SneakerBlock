@@ -1,3 +1,5 @@
+pragma soclidity ^0.4.24;
+
 //KIP17 Mintable
 interface IKIP17Minable {
     function mint(address _to, uint256 _tokenId) external returns (bool);
