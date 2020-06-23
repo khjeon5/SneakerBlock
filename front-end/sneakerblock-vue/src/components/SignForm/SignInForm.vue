@@ -63,7 +63,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['vxPubKey']),
+    ...mapState(['vxPubKey', 'logInName', 'logInAddress']),
   },
   methods: {
     onDone() {
@@ -92,7 +92,10 @@ export default {
         })
         .then(result => {
           // const id = result.data.login._id
-          this.$store.state.vxemail = result.data.login.pubKey
+          this.$store.state.vxPubKey = result.data.login.pubKey
+          this.$store.state.logInName = result.data.login.name
+          this.$store.state.logInAddress = result.data.login.address
+
           alert('login Success')
           this.$router.push({ path: '/' })
         })

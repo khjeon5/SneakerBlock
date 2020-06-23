@@ -14,7 +14,8 @@ export default new Vuex.Store({
     vxpw: '',
     vxname: '',
     vxPubKey: '',
-
+    logInName: '',
+    logInAddress: '',
   },
   getters: {
     //
