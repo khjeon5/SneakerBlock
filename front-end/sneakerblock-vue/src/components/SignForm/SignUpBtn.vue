@@ -27,8 +27,8 @@
     </v-col>
     {{ createAC.privateKey }}<br />
     {{ createAC.address }}<br />
-    {{ this.vxemail }}<br />
-    {{ vxpw }}<br />
+    <!-- {{ this.vxemail }}<br /> -->
+    <!-- {{ vxpw }}<br /> -->
     {{ vxname }}<br />
   </v-row>
 </template>
@@ -54,15 +54,15 @@ export default {
   methods: {
     ...mapMutations(['next', 'before', 'join', 'toSignin']),
     ...mapMutations('wallet', ['createAccount']),
-    ...mapState(['vxemail', 'vxname', 'vxpw']),
+    // ...mapState(['vxemail', 'vxname', 'vxpw']),
     toSignin() {
       console.log('clicked')
       this.$apollo.mutate({
         mutation: CREATE_USER_MUTATION,
         variables: {
-          email: this.vxemail,
-          password: this.vxpw,
-          name: this.vxname,
+          // email: this.vxemail,
+          // password: this.vxpw,
+          // name: this.vxname,
           address: this.createAC.address,
           pubkey: this.createAC.privateKey,
         },
