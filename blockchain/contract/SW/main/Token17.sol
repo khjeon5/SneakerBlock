@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
-import "./KIP17Token.sol";
-import "https://github.com/elixirevo/smartcontract/blob/master/openzeppline/contracts/ownership/Ownable.sol";
+import "../klaytn/contract/token/KIP17/KIP17Token.sol";
+import "../openzeppline/contracts/ownership/Ownable.sol";
 import {KIP7Spendable} from "./Token7.sol";
 // import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/drafts/Counters.sol";
 
@@ -13,6 +13,8 @@ contract Token17 is KIP17Token, Ownable {
     mapping (uint256 => uint256) public itemPrice;
     mapping (uint256 => string) public isSell;
     mapping (uint256 => string) public isDelivery;
+    mapping (uint256 => uint8) public isDeliveryNum;
+    mapping (uint256 => address) public buyingAddress;
     uint256 _sneakersPrice;
     
     
@@ -122,39 +124,28 @@ contract Token17 is KIP17Token, Ownable {
     }
     function buyingSneakers(uint256 num, uint256 price) public equalPrice(num, price) {
         _mintingCurrency.sendTokenBuyingSneakers(msg.sender, address(this), price);
+        buyingAddress[num] = msg.sender;
         isSell[num] = '거래중';
+        isDeliveryNum[num] = 1;
         isDelivery[num] = '준비중';
     }
     function deliveryStart(uint256 num) public {
+        require(isDeliveryNum[num] == 1);
         isDelivery[num] = '배송중';
+        isDeliveryNum[num] = 2;
         
     }
     function deliveryEnd(uint256 num) public {
+        require(isDeliveryNum[num] == 2);
         isDelivery[num] = '배송완료';
-        
+        isDeliveryNum[num] = 3;
     }
     function deliveryConfirm(uint256 num) public {
+        require(buyingAddress[num] == msg.sender);
+        require(isDeliveryNum[num] == 3);
         isDelivery[num] = '확인완료';
         address exOwner = ownerOf(num);
         _transferFrom(ownerOf(num), msg.sender, num);
         _mintingCurrency.SendTokenTradeEnd(address(this), exOwner, itemPrice[num]);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
