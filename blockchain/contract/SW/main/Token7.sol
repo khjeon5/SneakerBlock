@@ -1,11 +1,7 @@
 pragma solidity ^0.5.0;
 
-import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/token/KIP7/KIP7Mintable.sol";
-// import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/token/KIP7/KIP7Burnable.sol";
-// import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/token/KIP7/KIP7Pausable.sol";
-import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/token/KIP7/KIP7Metadata.sol";
-
-import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/access/Roles.sol";
+import "../klaytn/contract/token/KIP7/KIP7Token.sol";
+import "../klaytn/contract/access/Roles.sol";
 
 contract SpenderRole {
   using Roles for Roles.Role;
@@ -79,8 +75,21 @@ contract KIP7Spendable is KIP7, SpenderRole {
 }
 
 
-contract KIP7Token is KIP7Mintable, KIP7Metadata, KIP7Spendable {
-    constructor(string memory name, string memory symbol, uint8 decimals, uint256 initialSupply) KIP7Metadata(name, symbol, decimals) public {
-        _mint(msg.sender, initialSupply);
+contract Token7 is KIP7Token, KIP7Spendable {
+    constructor(string memory name, string memory symbol, uint8 decimals, uint256 initialSupply) KIP7Token(name, symbol, decimals, initialSupply) public {
+        
     }
+    
+    // function getToken(uint _amount) public {
+    //     transfer(address(this), _amount);
+    // }
+    
+    // function sendToken(address _receive, uint _amount) public {
+    //     _approve(address(this), msg.sender, _amount);
+    //     transferFrom(address(this), _receive, _amount);
+    // }
+    // function approveCA(address spender, uint256 value) public returns (bool) {
+    //     _approve(address(this), spender, value);
+    //     return true;
+    // }
 }
