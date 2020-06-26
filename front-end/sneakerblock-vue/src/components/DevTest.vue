@@ -13,6 +13,7 @@
 <script>
 import { caver, getContractInstanceToken7 } from '@/klaytn/caver'
 import { mapMutations } from 'vuex'
+import klaytnService from '@/klaytn/klaytnService'
 
 export default {
   data() {
@@ -35,6 +36,9 @@ export default {
     this.tokenBalance = await getContractInstanceToken7()
       .methods.balanceOf('0x8e505cd541178775eabbdaadc9834e3cf7f1a355')
       .call()
+    const service = new klaytnService()
+    const sss = await service.test()
+    console.log(sss)
   },
 }
 </script>

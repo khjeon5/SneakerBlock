@@ -7,8 +7,11 @@ export default class KlaytnService {
     //
   }
   async test() {
-    getContractInstanceToken7.methods.name()
-    getContractInstanceToken17.methods.name()
+    await getContractInstanceToken7().methods.name()
+    const v = await getContractInstanceToken17()
+      .methods.name()
+      .call()
+    return v
   }
 
   async getBlockNumber() {
