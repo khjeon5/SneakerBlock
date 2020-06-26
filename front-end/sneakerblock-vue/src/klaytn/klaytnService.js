@@ -1,10 +1,14 @@
-import { caver } from './caver'
+import { caver, getContractInstanceToken7, getContractInstanceToken17 } from './caver'
 
 //const agContract = new caver.klay.Contract(DEPLOYED_ABI, DEPLOYED_ADDRESS)
 
 export default class KlaytnService {
   constructor() {
     //
+  }
+  async test() {
+    getContractInstanceToken7.methods.name()
+    getContractInstanceToken17.methods.name()
   }
 
   async getBlockNumber() {
