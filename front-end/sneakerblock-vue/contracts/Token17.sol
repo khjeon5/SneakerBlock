@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./klaytn/contract/token/KIP17/KIP17Token.sol";
-import "./openzeppline/contracts/ownership/Ownable.sol";
+import "./klaytn/contract/ownership/Ownable.sol";
 import {KIP7Spendable} from "./Token7.sol";
 // import "https://github.com/elixirevo/smartcontract/blob/master/klaytn/contract/drafts/Counters.sol";
 
