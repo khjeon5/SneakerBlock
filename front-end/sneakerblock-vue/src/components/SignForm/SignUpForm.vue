@@ -28,7 +28,6 @@
     </v-col>
     {{ vxemail }}
     {{ email }}
-
   </v-row>
 </template>
 
@@ -54,7 +53,6 @@ export default {
   },
   computed: {
     ...mapState(['vxemail', 'vxpw', 'vxname', 'vxPubKey']),
-
   },
   methods: {
     updateEmail() {
