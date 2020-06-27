@@ -31,13 +31,12 @@
             @click:append="show = !show"
           ></v-text-field>
           <br />
-          <v-btn :disabled="!valid" color="teal white--text" @click="login">
+          <v-btn :disabled="!valid" color="teal white--text" @click="testlogin">
             로그인
           </v-btn>
         </v-form>
       </v-card>
     </v-col>
-    {{ this.vxPubKey }}
   </v-row>
 </template>
 
@@ -71,15 +70,6 @@ export default {
     },
     testlogin() {
       console.log(this.email, this.password, this.name)
-    },
-    next() {
-      if (this.emailVerify) {
-        console.log('가입되었습니다.')
-      } else {
-        console.log(this.emailVerify)
-
-        alert('이미 있는 이메일입니다.')
-      }
     },
     login() {
       this.$apollo

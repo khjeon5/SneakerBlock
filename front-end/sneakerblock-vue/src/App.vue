@@ -86,10 +86,13 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="teal darken-4" dark flat>
-      <v-toolbar-title @click="$router.push({ name: 'Home' })" style="cursor:pointer">SHOE BOX</v-toolbar-title>
-      <v-btn color="success" @click="screen = !screen" style="margin-left:20px">screen</v-btn>
+      <v-toolbar-title @click="$router.push({ name: 'Home' })" style="cursor:pointer">
+        <strong>SHOE BOX</strong>
+        <!-- <strong>{{ window.width }}</strong> -->
+      </v-toolbar-title>
+      <!-- <v-btn color="success" @click="screen = !screen" style="margin-left:20px">screen</v-btn> -->
       <v-spacer></v-spacer>
-      <div v-if="screen">
+      <div v-if="window.width >= 1000">
         <span @click="$router.push({ name: 'TestPage' })" style="cursor:pointer" class="mx-2">TestPage</span>
         <span @click="$router.push({ name: 'AdminPage' })" style="cursor:pointer" class="mx-2">AdminPage</span>
         <span @click="$router.push({ name: 'Home' })" style="cursor:pointer" class="mx-2">Home</span>
@@ -132,14 +135,28 @@ export default {
   components: {
     //
   },
-
   data() {
     return {
       drawer: false,
-      screen: true,
       search: false,
       links: ['Home', 'About Us', 'Team', 'Services', 'Blog', 'Contact Us'],
+      window: {
+        width: 0,
+      },
     }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      this.window.width = window.innerWidth
+      this.window.height = window.innerHeight
+    },
   },
 }
 </script>
