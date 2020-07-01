@@ -225,10 +225,13 @@ a {
     </v-navigation-drawer>
 
     <v-app-bar app color="teal darken-4" dark flat>
-      <v-toolbar-title>SNEAKER BLOCK</v-toolbar-title>
-      <v-btn color="success" @click="screen = !screen">screen</v-btn>
+      <v-toolbar-title @click="$router.push({ name: 'Home' })" style="cursor:pointer">
+        <strong>SHOE BOX</strong>
+        <!-- <strong>{{ window.width }}</strong> -->
+      </v-toolbar-title>
+      <!-- <v-btn color="success" @click="screen = !screen" style="margin-left:20px">screen</v-btn> -->
       <v-spacer></v-spacer>
-      <div v-if="screen">
+      <div v-if="window.width >= 1000">
         <span @click="$router.push({ name: 'TestPage' })" style="cursor:pointer" class="mx-2">TestPage</span>
         <span @click="$router.push({ name: 'AdminPage' })" style="cursor:pointer" class="mx-2">AdminPage</span>
         <span @click="$router.push({ name: 'Home' })" style="cursor:pointer" class="mx-2">Home</span>
@@ -251,13 +254,13 @@ a {
     <v-footer color="teal darken-4 white--text" class="pt-6">
       <v-spacer></v-spacer>
       <div class="mb-6">
-        <h1><strong>SNEAKER BLOCK</strong></h1>
+        <h1><strong>SHOE BOX</strong></h1>
         <h4><strong>with Blockchain Playground</strong></h4>
       </div>
       <v-spacer></v-spacer>
       <div class="mb-6">
         서울 마포구 공덕동 254-5, 공덕역 4번 출구, 신용보증기금빌딩 15층 알파룸 <br />
-        <strong>Copyright © 2020 SNEAKER BLOCK. All Rights Reserved.</strong>
+        <strong>Copyright © 2020 SHOE BOX. All Rights Reserved.</strong>
       </div>
       <v-spacer></v-spacer>
     </v-footer>
@@ -271,14 +274,28 @@ export default {
   components: {
     //
   },
-
   data() {
     return {
       drawer: false,
-      screen: true,
       search: false,
       links: ['Home', 'About Us', 'Team', 'Services', 'Blog', 'Contact Us'],
+      window: {
+        width: 0,
+      },
     }
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize() {
+      this.window.width = window.innerWidth
+      this.window.height = window.innerHeight
+    },
   },
 }
 </script>

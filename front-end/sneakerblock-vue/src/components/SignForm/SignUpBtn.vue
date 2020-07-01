@@ -18,20 +18,23 @@
             JOIN
           </v-btn>
         </v-row>
-        <v-row justify="end" v-if="signUpcount == 2">
-          <v-btn :disabled="!valid" color="primary" class="mx-3" @click="toSignin" router :to="{ name: 'SignIn' }">
+        <v-row justify="end" v-if="btn == 2">
+          <v-btn :disabled="!valid" color="primary" class="mx-3" @click="toSignin()" router :to="{ name: 'SignIn' }">
             Sign In
           </v-btn>
         </v-row>
       </v-card>
     </v-col>
-    {{ createAC }}
   </v-row>
 </template>
 
 <script>
 // import { caver } from '@/klaytn/caver'
 import { mapState, mapMutations } from 'vuex'
+
+import { CREATE_USER_MUTATION } from '@/constants/graphql'
+//import gql from 'graphql-tag'
+
 export default {
   data() {
     return {
@@ -40,12 +43,25 @@ export default {
     }
   },
   computed: {
-    ...mapState(['signUpcount']),
+    ...mapState(['signUpcount', 'vxemail', 'vxpw', 'vxname']),
     ...mapState('wallet', ['createAC']),
   },
   methods: {
     ...mapMutations(['next', 'before', 'join', 'toSignin']),
     ...mapMutations('wallet', ['createAccount']),
+    toSignin() {
+      console.log('clicked')
+      this.$apollo.mutate({
+        mutation: CREATE_USER_MUTATION,
+        variables: {
+          // email: this.vxemail,
+          // password: this.vxpw,
+          // name: this.vxname,
+          address: this.createAC.address,
+          pubkey: this.createAC.privateKey,
+        },
+      })
+    },
   },
 }
 </script>
