@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {},
+  mutations: {},
+  actions: {},
+  modules: {},
+})
+=======
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -49,3 +62,4 @@ export default new Vuex.Store({
     wallet,
   },
 })
+>>>>>>> 569399a5678910ba65d79ab5facc110b23e6d7c9

@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+<template>
+  <div>
+    <HelloWorld />
+    <productAllList />
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import HelloWorld from '@/components/HelloWorld.vue'
+import productAllList from '@/components/product/productAllList.vue'
+
+export default {
+  name: 'Home',
+  components: {
+    HelloWorld,
+    productAllList,
+  },
+}
+</script>
+=======
 <template>
   <div>
     <HelloWorld />
@@ -43,3 +65,4 @@ export default {
   },
 }
 </script>
+>>>>>>> 569399a5678910ba65d79ab5facc110b23e6d7c9

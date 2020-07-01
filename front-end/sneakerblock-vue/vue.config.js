@@ -1,3 +1,6 @@
+module.exports = {
+  transpileDependencies: ['vuetify'],
+}
 // const webpack = require('webpack')
 //const path = require('path')
 // const fs = require('fs')

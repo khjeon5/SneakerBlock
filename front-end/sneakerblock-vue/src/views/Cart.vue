@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12">
         <v-row justify="center">
-          <h2>Delivery</h2>
+          <h2>Cart</h2>
         </v-row>
       </v-col>
     </v-row>
@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: 'Delivery',
+  name: 'Cart',
   data() {
     return {
       //

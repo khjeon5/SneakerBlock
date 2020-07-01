@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+<template>
+  <v-container>
+    <SignUpForm></SignUpForm>
+  </v-container>
+</template>
+<script>
+import SignUpForm from '@/components/SignForm/SignUpForm.vue'
+export default {
+  name: 'SignUp',
+  components: {
+    SignUpForm,
+  },
+  data() {
+    return {
+      //
+    }
+  },
+}
+</script>
+=======
 <template>
   <v-container>
     <SignUpBar></SignUpBar>
@@ -34,3 +55,4 @@ export default {
   },
 }
 </script>
+>>>>>>> 569399a5678910ba65d79ab5facc110b23e6d7c9

@@ -1,3 +1,33 @@
+<<<<<<< HEAD
+<template>
+  <v-row>
+    <v-col>
+      <v-row justify="center">
+        <h2>안녕하세요</h2>
+      </v-row>
+    </v-col>
+    <v-col>
+      <v-row>
+        <h2>asdasdasd</h2>
+      </v-row>
+    </v-col>
+  </v-row>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      //
+    }
+  },
+}
+</script>
+
+<style>
+/*  */
+</style>
+=======
 <template>
   <v-row>
     <v-col>
@@ -86,3 +116,4 @@ export default {
 <style>
 /*  */
 </style>
+>>>>>>> 569399a5678910ba65d79ab5facc110b23e6d7c9
